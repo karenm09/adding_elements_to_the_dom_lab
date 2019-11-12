@@ -7,8 +7,60 @@ document.addEventListener("DOMContentLoaded", () => {
     question4();
     question5();
     question6();
+    question7();
 
 })
+const question7 = () => {
+  let h1 = document.createElement("h1");
+  h1.innerText = "Question 7";
+  document.body.appendChild(h1);
+
+  let inputNum = document.createElement("input")
+  inputNum.type = "number"
+  
+
+  let button = document.createElement("button");
+  button.innerText = "See Results"
+  
+  let footer = document.createElement("footer")
+  footer.appendChild(button)
+  
+  let para1 = document.createElement("p")
+  para1.id = 'avg'
+  let para2 = document.createElement("p")
+  para2.id = 'max'
+  let para3 = document.createElement("p");
+  para3.id = 'min'
+
+  
+  let numArr =[];
+  button.addEventListener("click", () =>{
+    let numEntered = document.querySelector('input').value
+    numEntered.push(numArr)
+
+    let p1Result = document.querySelector('#avg')
+    let p2Result = document.querySelector('#max')
+    let p3Result = document.querySelector('#min')
+
+    p1Result.innerText = mathAvg(numArr);
+    p2Result.innerText = mathMax(numArr);
+    p3Result.innerText = mathMin(numArr);
+ 
+  })
+
+  const mathAvg = (...arr) => arr.reduce((acc, el) => (acc + el) / arr.length);
+  
+  const mathMax = arr => Math.max(...arr);
+
+  const mathMin = arr => Math.min(...arr);
+
+  document.body.appendChild(footer);
+  document.body.appendChild(inputNum);
+  document.body.appendChild(para1);
+  document.body.appendChild(para2);
+  document.body.appendChild(para3);
+}
+
 
 const question6 = () => {
     let h1 = document.createElement("h1");
