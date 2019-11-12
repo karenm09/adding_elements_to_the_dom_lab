@@ -6,8 +6,39 @@ document.addEventListener("DOMContentLoaded", () => {
     question3();
     question4();
     question5();
+    question6();
 
 })
+
+const question6 = () => {
+    let h1 = document.createElement("h1");
+    h1.innerText = "Question 6";
+    document.body.appendChild(h1);
+    
+    let repeatLi = document.createElement("ul");
+    let button = document.createElement("button");
+    button.innerText = "Type your word or phrase here";
+    let footer = document.createElement("footer");
+    footer.appendChild(button);
+    let input1 = document.createElement("input");
+    input1.id = "input1"
+    let input2 = document.createElement("input");
+    input2.id = "input2"
+    input2.type = "number";
+
+    button.addEventListener("click", () => {
+        for(let i = 1; i <= input2.value; i++) {
+            let items = document.createElement("li");
+            items.innerText = input1.value;
+            repeatLi.appendChild(items);
+        }
+    })
+
+    document.body.appendChild(footer);
+    document.body.appendChild(repeatLi);
+    document.body.appendChild(input1);
+    document.body.appendChild(input2);
+}
 
 const question5 = () => {
     let h1 = document.createElement("h1");
