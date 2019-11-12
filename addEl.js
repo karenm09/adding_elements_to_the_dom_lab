@@ -5,8 +5,34 @@ document.addEventListener("DOMContentLoaded", () => {
     question2();
     question3();
     question4();
+    question5();
 
 })
+
+const question5 = () => {
+    let h1 = document.createElement("h1");
+    h1.innerText = "Question 5";
+    document.body.appendChild(h1);
+
+    let ul = document.createElement("ul");
+    let button = document.createElement("button");
+    button.innerText = "Enter Words";
+    let footer = document.createElement("footer");
+    footer.appendChild(button);
+    let input = document.createElement("input");
+    // input.type = "text"
+    // let inputAtt = document.createAttribute("type");
+    // inputAtt.value = "text"
+    // input.setAttributeNode(inputAtt)
+    button.addEventListener("click", () => {
+        let items = document.createElement("li");
+        items.innerText = input.value;
+        ul.appendChild(items);
+    })
+    document.body.appendChild(footer);
+    document.body.appendChild(ul);
+    document.body.appendChild(input);
+}
 
 const question4 = () => {
     let h1 = document.createElement("h1");
